@@ -1,5 +1,3 @@
--- ========= Basic Entities =========
-
 CREATE TABLE Suppliers (
     supplier_id   NUMBER(10)      PRIMARY KEY,
     supplier_name VARCHAR2(255)   NOT NULL,
@@ -24,7 +22,7 @@ CREATE TABLE Warehouses (
     location      VARCHAR2(500)
 );
 
--- ========= Linking Table for Stock =========
+
 
 CREATE TABLE Inventory (
     inventory_id      NUMBER(10)      PRIMARY KEY,
@@ -36,7 +34,6 @@ CREATE TABLE Inventory (
     CONSTRAINT uq_product_warehouse UNIQUE (product_id, warehouse_id)
 );
 
--- ========= Transactional Tables (Purchases) =========
 
 CREATE TABLE Purchase_Orders (
     po_id         NUMBER(10)      PRIMARY KEY,
@@ -55,8 +52,6 @@ CREATE TABLE Purchase_Order_Items (
     CONSTRAINT fk_poi_po FOREIGN KEY (po_id) REFERENCES Purchase_Orders(po_id),
     CONSTRAINT fk_poi_product FOREIGN KEY (product_id) REFERENCES Products(product_id)
 );
-
--- ========= Transactional Tables (Sales) =========
 
 CREATE TABLE Sales_Orders (
     so_id         NUMBER(10)      PRIMARY KEY,
