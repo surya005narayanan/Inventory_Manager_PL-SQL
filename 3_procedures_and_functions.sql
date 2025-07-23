@@ -8,10 +8,7 @@ CREATE OR REPLACE PROCEDURE add_new_product (
 AS
     v_product_id    Products.product_id%TYPE;
 BEGIN
-    -- Get the next available product ID. We'll use a simple MAX + 1 for now.
     SELECT NVL(MAX(product_id), 200) + 1 INTO v_product_id FROM Products;
-
-    -- Insert the new product information into the Products table.
     INSERT INTO Products (
         product_id,
         product_name,
@@ -29,15 +26,11 @@ BEGIN
         p_supplier_id
     );
 
-    -- Print a success message to the console.
     DBMS_OUTPUT.PUT_LINE('Successfully added new product: ' || p_product_name || ' with ID ' || v_product_id);
-
-    -- Commit the transaction to make the changes permanent.
     COMMIT;
 
 EXCEPTION
     WHEN OTHERS THEN
-        -- If any error occurs, print an error message and roll back any changes.
         DBMS_OUTPUT.PUT_LINE('Error adding product: ' || SQLERRM);
         ROLLBACK;
 END add_new_product;
