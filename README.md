@@ -19,17 +19,14 @@ Data Integrity: Enforces business rules using constraints and exception handling
 Transaction Management: Ensures all operations are ACID-compliant using COMMIT and ROLLBACK for data consistency.
 
 Technology Stack 🛠️
+
 Database: Oracle Database (e.g., 21c Express Edition)
-
 Language: PL/SQL, SQL
-
 Client/IDE: Oracle SQL Developer or VS Code with Oracle Developer Tools
 
 Database Schema (ER Diagram) 🗺️
-The database is designed with a normalized structure to ensure data integrity and scalability. It includes tables for products, suppliers, warehouses, inventory levels, and transaction records.
 
-(Instructions: Place the ER Diagram image you have in your project folder and change the path below to match)
-![Inventory System ER Diagram](./images/er-diagram.png)
+The database is designed with a normalized structure to ensure data integrity and scalability. It includes tables for products, suppliers, warehouses, inventory levels, and transaction records.
 
 A detailed breakdown of all tables, attributes, and keys can be found in the 1_create_schema.sql file.
 
@@ -37,8 +34,8 @@ Getting Started 🚀
 Follow these steps to get the database schema and all its logic set up on your local Oracle instance.
 
 Prerequisites
-An active Oracle Database instance (like XE)
 
+An active Oracle Database instance (like XE)
 An Oracle client like SQL Developer or VS Code
 
 Installation Steps
